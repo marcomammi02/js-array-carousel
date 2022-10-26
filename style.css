@@ -1,5 +1,47 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slider-container {
+    width: 700px;
+    height: 350px;
+    position: relative;
+}
+
+.comands {
+    height: calc(100% - 2rem);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+}
+
+.comands .btn {
+    width: min-content;
+}
+
+.comands .btn:hover .fa-solid {
+    color: white;
+    cursor: pointer;
+}
+
+.comands .fa-solid {
+    font-size: 2rem;
+    color: grey;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
