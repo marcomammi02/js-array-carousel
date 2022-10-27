@@ -26,16 +26,28 @@ const eleImgList = document.querySelectorAll('img');
 let activeIndex = 0
 
 eleBtnNext.addEventListener('click', function() {
-    if (activeIndex < eleImgList.length - 1) {
+    if (activeIndex < eleImgList.length) {
         eleImgList[activeIndex].classList.remove('active');
+        
         activeIndex++;
+
+        if (activeIndex == eleImgList.length) {
+            activeIndex = 0;
+        } 
+
         eleImgList[activeIndex].classList.add('active');
     }
 })
 eleBtnPrev.addEventListener('click', function() {
-    if (activeIndex > 0) {
+    if (activeIndex >= 0) {
         eleImgList[activeIndex].classList.remove('active');
-        activeIndex--;
+
+        if (activeIndex == 0) {
+            activeIndex = eleImgList.length - 1;
+        } else {
+            activeIndex--;
+        }
+
         eleImgList[activeIndex].classList.add('active');
     }
 })
